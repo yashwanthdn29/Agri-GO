@@ -1,0 +1,139 @@
+.farmer-commerce-overview {
+  margin-top: 28px;
+  padding: 22px;
+  border: 1px solid #e0e5da;
+  border-radius: 8px;
+  color: #19372d;
+  background: #fbfbf6;
+  box-shadow: 0 8px 26px rgb(34 55 43 / 4%);
+}
+
+.farmer-commerce-overview__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.farmer-commerce-overview__heading p {
+  margin: 0 0 6px;
+  color: #718064;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.farmer-commerce-overview__heading h2 {
+  margin: 0;
+  color: #19372d;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.farmer-commerce-overview__heading a {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 4px;
+  color: #fffdf6;
+  background: #315b43;
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.farmer-commerce-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.farmer-commerce-metrics article {
+  display: grid;
+  min-height: 72px;
+  align-content: center;
+  gap: 7px;
+  padding: 12px;
+  border: 1px solid #e7eae2;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.farmer-commerce-metrics span {
+  color: #788172;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.farmer-commerce-metrics strong {
+  color: #315b43;
+  font-size: 18px;
+}
+
+.farmer-commerce-overview__note,
+.farmer-commerce-overview__message,
+.farmer-commerce-overview__error {
+  margin: 12px 0;
+  color: #768074;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.farmer-commerce-overview__error {
+  color: #8c3f32;
+}
+
+.farmer-commerce-table-wrap {
+  overflow-x: auto;
+}
+
+.farmer-commerce-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+  text-align: left;
+}
+
+.farmer-commerce-table-wrap th,
+.farmer-commerce-table-wrap td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #e9ece4;
+}
+
+.farmer-commerce-table-wrap thead th {
+  color: #788172;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.farmer-commerce-table-wrap tbody th {
+  color: #315b43;
+  font-weight: 700;
+}
+
+.farmer-commerce-status {
+  color: #486347;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+@media (max-width: 560px) {
+  .farmer-commerce-overview {
+    padding: 16px;
+  }
+
+  .farmer-commerce-overview__heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .farmer-commerce-metrics {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+}

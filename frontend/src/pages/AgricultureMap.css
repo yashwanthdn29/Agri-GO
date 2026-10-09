@@ -1,0 +1,508 @@
+.agri-map-page {
+  min-height: 100vh;
+  padding: 40px 5.5% 64px;
+  color: #19372d;
+  background: #f5f5ef;
+}
+
+.agri-map-page__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.agri-map-heading,
+.agri-map-card__heading,
+.agri-map-data-card__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.agri-map-heading {
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.agri-map-eyebrow {
+  margin: 0 0 8px;
+  color: #708066;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.agri-map-heading h1,
+.agri-map-card h2,
+.agri-map-data-card h2 {
+  margin: 0;
+  color: #19372d;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+}
+
+.agri-map-heading h1 {
+  font-size: clamp(30px, 4vw, 42px);
+  letter-spacing: -0.035em;
+}
+
+.agri-map-heading__description {
+  max-width: 620px;
+  margin: 9px 0 0;
+  color: #6a766a;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.agri-map-heading__coverage {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 13px;
+  border: 1px solid #dce2d3;
+  border-radius: 4px;
+  color: #4e6842;
+  background: #fafbf6;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.agri-map-heading__coverage-mark {
+  color: #8aa16d;
+  font-size: 9px;
+}
+
+.agri-map-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #9ba493;
+  font-size: 12px;
+}
+
+.agri-map-breadcrumb button {
+  padding: 0;
+  border: 0;
+  color: #71806b;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.agri-map-breadcrumb button:hover,
+.agri-map-breadcrumb button.is-current,
+.agri-map-breadcrumb__current {
+  color: #234c3b;
+  font-weight: 700;
+}
+
+.agri-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(290px, 0.8fr);
+  align-items: start;
+  gap: 16px;
+}
+
+.agri-map-card,
+.agri-map-data-card {
+  overflow: hidden;
+  border: 1px solid #e2e5dc;
+  border-radius: 6px;
+  background: #fbfbf6;
+  box-shadow: 0 8px 26px rgb(34 55 43 / 4%);
+}
+
+.agri-map-card__heading,
+.agri-map-data-card__heading {
+  min-height: 78px;
+  align-items: center;
+  padding: 16px 20px;
+}
+
+.agri-map-card h2,
+.agri-map-data-card h2 {
+  font-size: 22px;
+}
+
+.agri-map-card__heading .agri-map-eyebrow,
+.agri-map-data-card__heading .agri-map-eyebrow {
+  margin-bottom: 4px;
+}
+
+.agri-map-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid #dce2d3;
+  border-radius: 4px;
+  color: #315640;
+  background: #f5f7ef;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.agri-map-reset:hover {
+  background: #eaf0df;
+}
+
+.agri-map-canvas {
+  overflow: hidden;
+  border-top: 1px solid #e8eae3;
+  border-bottom: 1px solid #e8eae3;
+  background: #eef0e9;
+}
+
+.agri-map-canvas .leaflet-container {
+  z-index: 0;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+.agri-map-leaflet {
+  height: min(66vh, 660px);
+  min-height: 420px;
+  width: 100%;
+}
+
+.agri-map-label {
+  padding: 2px 5px;
+  border: 0;
+  border-radius: 3px;
+  color: #354536;
+  background: rgb(250 251 246 / 88%);
+  box-shadow: 0 1px 4px rgb(25 55 45 / 12%);
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.agri-map-label::before {
+  display: none;
+}
+
+.agri-map-message {
+  display: grid;
+  min-height: 420px;
+  place-items: center;
+  color: #63735d;
+  font-size: 13px;
+}
+
+.agri-map-message--error,
+.agri-map-loading--error {
+  color: #8c3f32;
+}
+
+.agri-map-loading--error button {
+  margin-left: 8px;
+  padding: 2px 5px;
+  border: 1px solid #d5b9ad;
+  border-radius: 3px;
+  color: inherit;
+  background: #fffaf6;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.agri-map-loading {
+  position: absolute;
+  z-index: 500;
+  top: 14px;
+  left: 50%;
+  padding: 8px 12px;
+  transform: translateX(-50%);
+  border: 1px solid #dce2d3;
+  border-radius: 4px;
+  color: #52644c;
+  background: rgb(250 251 246 / 94%);
+  box-shadow: 0 2px 8px rgb(25 55 45 / 12%);
+  font-size: 11px;
+}
+
+.agri-map-canvas:has(.agri-map-loading) {
+  position: relative;
+}
+
+.agri-map-card__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  color: #778073;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.agri-map-card__footer a,
+.agri-map-source-note a {
+  color: #45694c;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.agri-map-data-card {
+  padding-bottom: 6px;
+}
+
+.agri-map-data-card__heading {
+  align-items: flex-start;
+}
+
+.agri-map-data-card__status {
+  padding: 6px 8px;
+  border: 1px solid #e8d9b9;
+  border-radius: 3px;
+  color: #826638;
+  background: #faf5e9;
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.agri-map-data-card__refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: -5px 18px 10px;
+  padding: 0;
+  border: 0;
+  color: #45694c;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.agri-map-data-card__refresh:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.agri-map-data-card__notice {
+  margin: 0 18px 10px;
+  padding: 11px 12px;
+  border-left: 2px solid #c1ce9c;
+  color: #687262;
+  background: #f3f5eb;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.agri-map-indicators {
+  margin: 0;
+  padding: 0 18px;
+}
+
+.agri-map-indicator {
+  display: grid;
+  min-height: 48px;
+  grid-template-columns: minmax(0, 1fr) minmax(90px, auto);
+  align-items: center;
+  column-gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid #eceee7;
+  font-size: 11px;
+}
+
+.agri-map-indicator:last-child {
+  border-bottom: 0;
+}
+
+.agri-map-indicator dt {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #5b685b;
+}
+
+.agri-map-indicator dt span {
+  display: inline-grid;
+  width: 19px;
+  height: 19px;
+  place-items: center;
+  border-radius: 50%;
+  color: #668052;
+  background: #edf1e5;
+  font-size: 11px;
+}
+
+.agri-map-indicator dd {
+  margin: 0;
+  color: #959b8f;
+  font-size: 10px;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.agri-map-indicator__value--available {
+  color: #315c40 !important;
+  font-weight: 700;
+}
+
+.agri-map-indicator__value--error {
+  color: #9b4939 !important;
+}
+
+.agri-map-indicator__detail,
+.agri-map-indicator__source {
+  grid-column: 1 / -1;
+  margin: -2px 0 0 28px;
+  color: #8a9185;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.agri-map-indicator__source {
+  margin-top: -5px;
+  color: #75816f;
+}
+
+.agri-map-snapshot-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 12px 18px 0;
+  padding: 9px 10px;
+  border: 1px solid #eed9d1;
+  border-radius: 4px;
+  color: #8c3f32;
+  background: #fff8f4;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.agri-map-snapshot-error button {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border: 1px solid #d5b9ad;
+  border-radius: 3px;
+  color: inherit;
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.agri-map-snapshot-footnote {
+  margin: 11px 18px 8px;
+  color: #838a7f;
+  font-size: 9px;
+  line-height: 1.55;
+  white-space: nowrap;
+}
+
+.agri-map-source-note {
+  max-width: 980px;
+  margin: 16px 0 0;
+  color: #838a7f;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .agri-map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .agri-map-data-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    padding-bottom: 14px;
+  }
+
+  .agri-map-data-card__heading,
+  .agri-map-data-card__notice {
+    grid-column: 1 / -1;
+  }
+
+  .agri-map-indicators {
+    display: contents;
+  }
+
+  .agri-map-indicator {
+    margin: 0 18px;
+  }
+
+  .agri-map-indicators {
+    display: block;
+    padding: 0 18px;
+  }
+
+  .agri-map-snapshot-footnote {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .agri-map-page {
+    padding: 28px 16px 44px;
+  }
+
+  .agri-map-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .agri-map-heading__description {
+    font-size: 12px;
+  }
+
+  .agri-map-card__heading,
+  .agri-map-data-card__heading {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .agri-map-card h2,
+  .agri-map-data-card h2 {
+    font-size: 19px;
+  }
+
+  .agri-map-leaflet {
+    min-height: 420px;
+  }
+
+  .agri-map-card__footer {
+    flex-direction: column;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .agri-map-data-card {
+    display: block;
+  }
+
+  .agri-map-data-card__notice {
+    margin-right: 14px;
+    margin-left: 14px;
+  }
+
+  .agri-map-indicators {
+    display: block;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .agri-map-indicator {
+    margin: 0;
+  }
+
+  .agri-map-data-card__refresh,
+  .agri-map-snapshot-footnote {
+    margin-right: 14px;
+    margin-left: 14px;
+  }
+
+  .agri-map-snapshot-error {
+    margin-right: 14px;
+    margin-left: 14px;
+  }
+}
