@@ -1,0 +1,474 @@
+.profit-loss-page {
+  min-height: 100vh;
+  padding: 38px 20px 56px;
+  color: #203b30;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgb(226 239 223 / 70%), transparent 34rem),
+    #f5f7f3;
+}
+
+.profit-loss-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.profit-loss-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.profit-loss-back {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: #547462;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.profit-loss-back:hover {
+  color: #21573b;
+}
+
+.profit-loss-eyebrow,
+.profit-panel__heading p {
+  margin: 0 0 7px;
+  color: #758b7c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.profit-loss-header h1 {
+  margin: 0;
+  color: #1d3d2e;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(32px, 5vw, 46px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.profit-loss-header > div > p:last-child {
+  margin: 9px 0 0;
+  color: #6d7d71;
+  font-size: 14px;
+}
+
+.profit-month-picker {
+  display: grid;
+  gap: 7px;
+  min-width: 180px;
+  color: #64766a;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.profit-month-picker input,
+.profit-entry-form input,
+.profit-entry-form select {
+  min-height: 42px;
+  width: 100%;
+  padding: 0 12px;
+  border: 1px solid #dfe6de;
+  border-radius: 8px;
+  color: #263d30;
+  background: #fff;
+  font: inherit;
+}
+
+.profit-month-picker input:focus,
+.profit-entry-form input:focus,
+.profit-entry-form select:focus {
+  border-color: #3b8054;
+  outline: 3px solid rgb(59 128 84 / 13%);
+}
+
+.profit-alert {
+  margin: 0 0 18px;
+  padding: 12px 15px;
+  border: 1px solid #efc9c1;
+  border-radius: 8px;
+  color: #813e32;
+  background: #fff4f1;
+  font-size: 13px;
+}
+
+.profit-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.profit-summary-card {
+  display: grid;
+  min-height: 140px;
+  align-content: center;
+  gap: 9px;
+  padding: 20px 22px;
+  border: 1px solid #e6eae4;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 7px 24px rgb(34 55 43 / 4%);
+}
+
+.profit-summary-card--net {
+  border-color: #d7e8d8;
+  background: linear-gradient(135deg, #f1f8f0, #fff);
+}
+
+.profit-summary-card > span {
+  color: #77877b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.profit-summary-card > strong {
+  color: #244b36;
+  font-size: clamp(24px, 3vw, 32px);
+  letter-spacing: -0.04em;
+}
+
+.profit-summary-card > small {
+  color: #94a097;
+  font-size: 11px;
+}
+
+.profit-panel {
+  padding: 23px;
+  border: 1px solid #e6eae4;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 7px 24px rgb(34 55 43 / 4%);
+}
+
+.profit-panel__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.profit-panel__heading h2 {
+  margin: 0;
+  color: #264333;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.profit-panel__heading > span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #65806c;
+  background: #f0f5ef;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.profit-chart {
+  margin-top: 16px;
+}
+
+.profit-chart__legend {
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+  color: #748177;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.profit-chart__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profit-chart__legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.profit-chart__scroll {
+  overflow-x: auto;
+}
+
+.profit-chart svg {
+  display: block;
+  width: 100%;
+  min-width: 520px;
+  overflow: visible;
+}
+
+.profit-chart svg line {
+  stroke: #edf0ec;
+  stroke-width: 1;
+}
+
+.profit-chart svg line.profit-chart__zero {
+  stroke: #bcc9bd;
+  stroke-width: 1.5;
+}
+
+.profit-chart svg text {
+  fill: #87948b;
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.profit-chart svg text.profit-chart__month {
+  fill: #65756a;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.profit-chart__note {
+  margin: 0;
+  color: #87948b;
+  font-size: 10px;
+}
+
+.profit-content-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.4fr);
+  align-items: start;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.profit-entry-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.profit-entry-form label {
+  display: grid;
+  gap: 7px;
+  color: #64766a;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.profit-entry-form input,
+.profit-entry-form select {
+  font-size: 13px;
+}
+
+.profit-entry-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.profit-entry-form button {
+  min-height: 43px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: #2e6846;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.profit-entry-form button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #24583a;
+}
+
+.profit-entry-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.profit-entry-form > p {
+  margin: -4px 0 0;
+  color: #909b92;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.profit-transactions ul {
+  display: grid;
+  gap: 2px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.profit-transactions li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto 28px;
+  align-items: center;
+  gap: 11px;
+  min-height: 64px;
+  border-bottom: 1px solid #edf0ec;
+}
+
+.profit-transaction-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.profit-transaction-icon--income {
+  color: #2c764b;
+  background: #eaf5ec;
+}
+
+.profit-transaction-icon--expense {
+  color: #b47727;
+  background: #fbf2e4;
+}
+
+.profit-transaction-info {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+}
+
+.profit-transaction-info strong {
+  overflow: hidden;
+  color: #344a3a;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profit-transaction-info span {
+  color: #929c94;
+  font-size: 10px;
+}
+
+.profit-transaction-amount {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.profit-transaction-amount--income {
+  color: #348052;
+}
+
+.profit-transaction-amount--expense {
+  color: #ab762f;
+}
+
+.profit-transactions li > button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 6px;
+  color: #87948b;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.profit-transactions li > button:hover {
+  color: #9c4438;
+  background: #fff0ed;
+}
+
+.profit-empty-state {
+  display: grid;
+  min-height: 210px;
+  align-content: center;
+  justify-items: center;
+  padding: 18px;
+  text-align: center;
+}
+
+.profit-empty-state > span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  color: #66836f;
+  background: #edf4ed;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.profit-empty-state strong {
+  color: #42584a;
+  font-size: 13px;
+}
+
+.profit-empty-state p {
+  max-width: 280px;
+  margin: 7px 0 0;
+  color: #89958b;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.profit-disclaimer {
+  margin: 17px 0 0;
+  color: #8b978e;
+  font-size: 10px;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .profit-loss-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profit-month-picker {
+    width: 100%;
+  }
+
+  .profit-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .profit-loss-page {
+    padding: 24px 14px 40px;
+  }
+
+  .profit-summary {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .profit-summary-card {
+    min-height: 112px;
+  }
+
+  .profit-panel {
+    padding: 17px 14px;
+  }
+
+  .profit-chart__legend {
+    justify-content: flex-start;
+    gap: 11px;
+    font-size: 9px;
+  }
+
+  .profit-transactions li {
+    grid-template-columns: 32px minmax(0, 1fr) auto 24px;
+    gap: 7px;
+  }
+
+  .profit-transaction-icon {
+    width: 30px;
+    height: 30px;
+  }
+}

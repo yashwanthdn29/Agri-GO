@@ -1,0 +1,310 @@
+.farming-guide {
+  --guide-ink: #1b382e;
+  --guide-green: #28583f;
+  --guide-muted: #66756b;
+  --guide-line: #dfe5dc;
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 0 5.5% 56px;
+  color: var(--guide-ink);
+}
+
+.farming-guide__hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 38px;
+  overflow: hidden;
+  padding: clamp(38px, 7vw, 82px) clamp(22px, 4vw, 52px);
+  border: 1px solid #e1e5d8;
+  border-radius: 8px;
+  background-color: #f7f8f0;
+  background-image: linear-gradient(120deg, #f7f8f0, #edf2e8);
+  background-size: cover;
+  box-shadow: 0 14px 40px rgb(34 55 43 / 5%);
+}
+
+.farming-guide__hero-copy { max-width: 720px; }
+.farming-guide__eyebrow,
+.farming-guide__card-kicker {
+  margin: 0;
+  color: #946642;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.farming-guide__hero h1 {
+  margin: 13px 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 500;
+  letter-spacing: -.04em;
+  line-height: 1.04;
+}
+
+.farming-guide__hero h1 span { color: #718744; }
+.farming-guide__hero-copy > p:not(.farming-guide__eyebrow) {
+  max-width: 650px;
+  color: #58695e;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.farming-guide__map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px 15px;
+  border: 1px solid #b9c8b8;
+  color: var(--guide-green);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.farming-guide__map-link:hover { background: #edf2e9; }
+.farming-guide__hero-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.farming-guide__hero-stat {
+  width: min(250px, 28%);
+  min-width: 205px;
+  align-self: center;
+  padding: 22px;
+  border: 1px solid rgb(255 255 255 / 68%);
+  border-left: 3px solid #b2c770;
+  background: rgb(250 251 246 / 92%);
+  box-shadow: 0 12px 30px rgb(25 55 45 / 12%);
+}
+
+.farming-guide__hero-stat > span { color: #786544; font-size: 9px; font-weight: 800; letter-spacing: .15em; }
+.farming-guide__hero-stat strong { display: block; margin-top: 9px; font-family: "Fraunces", Georgia, serif; font-size: 48px; font-weight: 500; }
+.farming-guide__hero-stat p { margin: 0 0 12px; font-size: 14px; line-height: 1.5; }
+.farming-guide__hero-stat small { color: var(--guide-muted); font-size: 10px; line-height: 1.5; }
+
+.farming-guide__learning-path { margin-top: 30px; padding: 22px; border: 1px solid var(--guide-line); background: #fff; }
+.farming-guide__learning-heading { display: flex; justify-content: space-between; gap: 18px; align-items: end; }
+.farming-guide__learning-heading h2,
+.farming-guide__footer h2 { margin: 6px 0; font-family: "Fraunces", Georgia, serif; font-size: 25px; font-weight: 500; }
+.farming-guide__learning-heading p:not(.farming-guide__eyebrow) { margin: 5px 0 0; color: var(--guide-muted); font-size: 12px; line-height: 1.6; }
+.farming-guide__learning-heading > span { flex: 0 0 auto; color: #64734d; font-size: 11px; font-weight: 700; }
+.farming-guide__lesson-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 18px 0 0; padding: 0; list-style: none; }
+.farming-guide__lesson-grid article { display: flex; height: 100%; flex-direction: column; align-items: flex-start; padding: 16px; border: 1px solid #e6eae2; background: #f9faf6; }
+.farming-guide__lesson-grid h3 { margin: 0; font-size: 13px; line-height: 1.5; }
+.farming-guide__lesson-grid p { flex: 1; margin: 8px 0 14px; color: #59695f; font-size: 11px; line-height: 1.65; }
+.farming-guide__lesson-grid button { padding: 0; border: 0; color: var(--guide-green); background: transparent; cursor: pointer; font: inherit; font-size: 11px; font-weight: 700; text-underline-offset: 3px; }
+.farming-guide__lesson-grid button:hover { text-decoration: underline; }
+.farming-guide__lesson-grid button:focus-visible { outline: 2px solid #547746; outline-offset: 3px; }
+.farming-guide__tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  padding: 10px 0 20px;
+  counter-reset: guide-tab;
+}
+
+.farming-guide__tab {
+  position: relative;
+  min-height: 112px;
+  padding: 15px 16px;
+  border: 1px solid #dfe5dc;
+  border-radius: 5px;
+  text-align: left;
+  color: var(--guide-ink);
+  background: linear-gradient(145deg, #fff, #f8faf5);
+  cursor: pointer;
+  counter-increment: guide-tab;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.farming-guide__tab::before {
+  display: block;
+  margin-bottom: 12px;
+  color: #9caa85;
+  content: "0" counter(guide-tab);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.farming-guide__tab strong,
+.farming-guide__tab span { display: block; }
+.farming-guide__tab strong { font-size: 13px; line-height: 1.4; }
+.farming-guide__tab span { margin-top: 6px; color: var(--guide-muted); font-size: 11px; line-height: 1.5; }
+.farming-guide__tab:hover,
+.farming-guide__tab--active {
+  transform: translateY(-2px);
+  border-color: #78906b;
+  background: #edf3e6;
+  box-shadow: 0 8px 18px rgb(39 75 54 / 9%);
+}
+
+.farming-guide__tab:focus-visible {
+  outline: 2px solid #65864f;
+  outline-offset: 3px;
+}
+
+.farming-guide__nav-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-top: 23px;
+}
+
+.farming-guide__nav-intro > div {
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.farming-guide__nav-intro > div > p:last-child {
+  margin: 0;
+  color: var(--guide-muted);
+  font-size: 11px;
+}
+
+.farming-guide__section { padding: 25px 0 40px; }
+.farming-guide__section-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin: 0 0 22px; }
+.farming-guide__section-heading h2 { margin: 7px 0; font-family: "Fraunces", Georgia, serif; font-size: clamp(27px, 3vw, 38px); font-weight: 500; letter-spacing: -.025em; }
+.farming-guide__section-heading p:not(.farming-guide__eyebrow) { max-width: 750px; margin: 0; color: var(--guide-muted); font-size: 13px; line-height: 1.7; }
+.farming-guide__count { flex: 0 0 auto; padding: 8px 11px; border-radius: 99px; color: #425d45; background: #e9efe3; font-size: 11px; font-weight: 700; }
+.farming-guide__filters { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; margin: 22px 0; }
+.farming-guide__filters--catalog { grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr); max-width: 900px; }
+.farming-guide__filters label,
+.farming-guide__search {
+  display: grid;
+  gap: 7px;
+  color: #405448;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.farming-guide__filters input,
+.farming-guide__filters select,
+.farming-guide__search input {
+  width: 100%;
+  min-height: 43px;
+  padding: 0 12px;
+  border: 1px solid #d5ddd3;
+  border-radius: 2px;
+  color: var(--guide-ink);
+  background: #fff;
+  font: inherit;
+  font-size: 12px;
+}
+
+.farming-guide input:focus,
+.farming-guide select:focus,
+.farming-guide button:focus-visible,
+.farming-guide a:focus-visible { outline: 2px solid #65864f; outline-offset: 2px; }
+.farming-guide__crop-grid,
+.farming-guide__tool-grid,
+.farming-guide__fertilizer-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.farming-guide__card {
+  padding: 22px;
+  border: 1px solid var(--guide-line);
+  border-top: 3px solid #bdcc8c;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgb(34 55 43 / 4%);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+.farming-guide__card:hover {
+  transform: translateY(-2px);
+  border-color: #bdcc8c;
+  box-shadow: 0 10px 24px rgb(34 55 43 / 8%);
+}
+.farming-guide__card h3 { margin: 9px 0 8px; font-family: "Fraunces", Georgia, serif; font-size: 22px; font-weight: 500; }
+.farming-guide__card > p { margin: 0; color: #53645a; font-size: 12px; line-height: 1.7; }
+.farming-guide__card-kicker { display: block; color: #73864f; font-size: 9px; }
+.farming-guide__card-top { display: flex; justify-content: space-between; gap: 10px; align-items: center; color: #68786b; font-size: 10px; line-height: 1.5; }
+.farming-guide__badge { padding: 5px 8px; border-radius: 3px; color: #3f633f; background: #edf2e8; font-size: 9px; font-weight: 700; }
+.farming-guide__card dl { margin: 18px 0 0; }
+.farming-guide__card dl > div { padding: 10px 0; border-top: 1px solid #edf0ea; }
+.farming-guide__card dt { color: #738077; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; }
+.farming-guide__card dd { margin: 5px 0 0; color: #334b3d; font-size: 11px; line-height: 1.6; }
+.farming-guide__crop-card { border-top-color: #849b68; }
+.farming-guide__search { max-width: 540px; margin: 0 0 20px; }
+.farming-guide__note { margin: 17px 0 0; color: #707b72; font-size: 10px; line-height: 1.7; }
+.farming-guide__empty { grid-column: 1 / -1; padding: 24px; border: 1px dashed #cbd6c7; color: var(--guide-muted); font-size: 13px; line-height: 1.7; }
+.farming-guide__callout { margin-top: 22px; padding: 18px 20px; border-left: 3px solid #8ba76c; background: #f0f3ea; }
+.farming-guide__callout strong { font-size: 13px; }
+.farming-guide__callout p { margin: 7px 0 0; color: #526357; font-size: 12px; line-height: 1.75; }
+.farming-guide__callout--warning { border-color: #bc8a54; background: #f7f1e8; }
+.farming-guide__measure { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 12px; align-items: stretch; margin-top: 25px; }
+.farming-guide__measure h3 { margin: 7px 0; font-family: "Fraunces", Georgia, serif; font-size: 21px; font-weight: 500; }
+.farming-guide__measure > div:first-child > p:last-child { color: var(--guide-muted); font-size: 11px; line-height: 1.6; }
+.farming-guide__equation { display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 15px; border: 1px solid var(--guide-line); background: #fff; }
+.farming-guide__equation strong { font-size: 10px; line-height: 1.5; }
+.farming-guide__equation span { color: #55734f; font-size: 11px; line-height: 1.6; }
+.farming-guide__filters--region { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; }
+.farming-guide__filters select:disabled { color: #8b968d; background: #f2f4f0; }
+.farming-guide__region-summary { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin: 25px 0 14px; padding-bottom: 11px; border-bottom: 1px solid var(--guide-line); }
+.farming-guide__region-summary strong { font-family: "Fraunces", Georgia, serif; font-size: 22px; font-weight: 500; }
+.farming-guide__region-summary span { color: var(--guide-muted); font-size: 11px; }
+.farming-guide__district-data { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: center; margin: 16px 0; padding: 17px; border: 1px solid #dfe5dc; background: #f7f8f3; }
+.farming-guide__district-data h3 { margin: 5px 0; font-family: "Fraunces", Georgia, serif; font-size: 19px; font-weight: 500; }
+.farming-guide__district-data p:not(.farming-guide__eyebrow) { margin: 4px 0; color: #59695f; font-size: 11px; line-height: 1.65; }
+.farming-guide__region-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.farming-guide__region-grid article { padding: 15px; border: 1px solid var(--guide-line); background: #fff; }
+.farming-guide__region-grid article > span { color: #92724b; font-size: 9px; font-weight: 700; }
+.farming-guide__region-grid h3 { margin: 7px 0; font-family: "Fraunces", Georgia, serif; font-size: 17px; font-weight: 500; }
+.farming-guide__region-grid p { margin: 0; color: var(--guide-muted); font-size: 10px; line-height: 1.5; }
+.farming-guide__mandi-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.farming-guide__mandi-grid article { padding: 17px; border: 1px solid var(--guide-line); background: #fff; }
+.farming-guide__mandi-grid article > span { color: #92724b; font-size: 9px; font-weight: 700; }
+.farming-guide__mandi-grid h3 { margin: 7px 0; font-family: "Fraunces", Georgia, serif; font-size: 18px; font-weight: 500; }
+.farming-guide__mandi-grid p { min-height: 32px; color: var(--guide-muted); font-size: 10px; line-height: 1.6; }
+.farming-guide__mandi-grid a { color: var(--guide-green); font-size: 10px; font-weight: 700; text-underline-offset: 3px; }
+.farming-guide__error button { margin-top: 8px; padding: 8px 12px; border: 1px solid currentColor; color: inherit; background: transparent; cursor: pointer; font: inherit; }
+.farming-guide__region-actions { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 20px; }
+.farming-guide__region-actions a,
+.farming-guide__footer a { color: var(--guide-green); font-size: 11px; font-weight: 700; text-underline-offset: 3px; }
+.farming-guide__error { padding: 12px; color: #7a3528; background: #f9eeea; font-size: 11px; line-height: 1.6; }
+.farming-guide__footer { margin-top: 28px; padding: 23px 0 0; border-top: 1px solid var(--guide-line); }
+.farming-guide__footer > strong { font-family: "Fraunces", Georgia, serif; font-size: 20px; font-weight: 500; }
+.farming-guide__footer > p { max-width: 900px; color: var(--guide-muted); font-size: 11px; line-height: 1.7; }
+.farming-guide__footer h2 { margin-top: 24px; font-size: 22px; }
+.farming-guide__sources-note { max-width: 900px; color: var(--guide-muted); font-size: 11px; line-height: 1.7; }
+.farming-guide__sources-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+.farming-guide__sources-grid a { display: block; padding: 14px; border: 1px solid var(--guide-line); background: #fff; text-decoration: none; }
+.farming-guide__sources-grid a:hover { border-color: #9eaf8d; background: #f7f9f3; }
+.farming-guide__sources-grid strong,
+.farming-guide__sources-grid span { display: block; }
+.farming-guide__sources-grid strong { color: var(--guide-green); font-size: 11px; line-height: 1.5; text-decoration: underline; text-underline-offset: 3px; }
+.farming-guide__sources-grid span { margin-top: 5px; color: var(--guide-muted); font-size: 10px; line-height: 1.6; }
+
+@media (max-width: 900px) {
+  .farming-guide__tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .farming-guide__lesson-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .farming-guide__crop-grid,
+  .farming-guide__tool-grid,
+  .farming-guide__fertilizer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .farming-guide__measure { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .farming-guide__region-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .farming-guide__mandi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 650px) {
+  .farming-guide { padding: 0 18px 38px; }
+  .farming-guide__hero { flex-direction: column; gap: 24px; padding: 28px 20px; }
+  .farming-guide__hero-stat { width: 100%; }
+  .farming-guide__learning-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .farming-guide__lesson-grid,
+  .farming-guide__sources-grid { grid-template-columns: 1fr; }
+  .farming-guide__tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .farming-guide__nav-intro > div { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .farming-guide__filters,
+  .farming-guide__filters--catalog,
+  .farming-guide__filters--region { grid-template-columns: 1fr; }
+  .farming-guide__crop-grid,
+  .farming-guide__tool-grid,
+  .farming-guide__fertilizer-grid,
+  .farming-guide__measure { grid-template-columns: 1fr; }
+  .farming-guide__region-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .farming-guide__mandi-grid { grid-template-columns: 1fr; }
+  .farming-guide__section-heading { align-items: start; flex-direction: column; }
+  .farming-guide__region-summary { align-items: start; flex-direction: column; }
+  .farming-guide__district-data { grid-template-columns: 1fr; }
+}

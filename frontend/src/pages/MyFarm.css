@@ -1,0 +1,304 @@
+.my-farm-page {
+  min-height: 100vh;
+  padding: 38px 5.5% 64px;
+  color: #19372d;
+  background: #f5f5ef;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+.my-farm-page__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.my-farm-header,
+.my-farm-panel__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.my-farm-header {
+  margin-bottom: 24px;
+}
+
+.my-farm-eyebrow {
+  margin: 0 0 7px;
+  color: #718064;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.my-farm-header h1,
+.my-farm-panel h2 {
+  margin: 0;
+  color: #19372d;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+}
+
+.my-farm-header h1 {
+  font-size: clamp(30px, 4vw, 42px);
+  letter-spacing: -0.03em;
+}
+
+.my-farm-header > div > p:last-child {
+  max-width: 650px;
+  margin: 10px 0 0;
+  color: #6b776d;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.my-farm-back,
+.my-farm-form button {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  border: 1px solid #315b43;
+  border-radius: 4px;
+  color: #fffdf6;
+  background: #315b43;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.my-farm-back:hover,
+.my-farm-form button:hover:not(:disabled) {
+  background: #244a36;
+}
+
+.my-farm-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.my-farm-metrics article,
+.my-farm-panel {
+  border: 1px solid #e0e5da;
+  border-radius: 6px;
+  background: #fbfbf6;
+  box-shadow: 0 8px 26px rgb(34 55 43 / 4%);
+}
+
+.my-farm-metrics article {
+  display: grid;
+  min-height: 90px;
+  align-content: center;
+  gap: 8px;
+  padding: 16px 18px;
+}
+
+.my-farm-metrics article span {
+  color: #788172;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+.my-farm-metrics article strong {
+  color: #315b43;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.my-farm-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+
+.my-farm-panel {
+  padding: 20px;
+}
+
+.my-farm-panel__heading {
+  align-items: center;
+  margin-bottom: 17px;
+}
+
+.my-farm-panel h2 {
+  font-size: 21px;
+}
+
+.my-farm-private-label {
+  padding: 6px 8px;
+  border: 1px solid #dce5d3;
+  border-radius: 3px;
+  color: #46674c;
+  background: #f0f4e9;
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.my-farm-form {
+  display: grid;
+  gap: 13px;
+}
+
+.my-farm-form label {
+  display: grid;
+  gap: 6px;
+  color: #59675a;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.my-farm-form input,
+.my-farm-form select {
+  width: 100%;
+  min-height: 39px;
+  padding: 8px 10px;
+  border: 1px solid #d9dfd5;
+  border-radius: 4px;
+  color: #263b2f;
+  background: #fff;
+  font: inherit;
+  font-size: 12px;
+}
+
+.my-farm-form input:focus,
+.my-farm-form select:focus {
+  border-color: #708b60;
+  outline: 2px solid rgb(112 139 96 / 20%);
+}
+
+.my-farm-form button {
+  justify-self: start;
+  margin-top: 2px;
+}
+
+.my-farm-form button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.my-farm-form__error,
+.my-farm-form__success,
+.my-farm-alert {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.my-farm-form__error,
+.my-farm-alert {
+  border: 1px solid #efd9d2;
+  color: #8d4537;
+  background: #fff8f5;
+}
+
+.my-farm-form__success {
+  color: #315c40;
+  background: #f0f5e9;
+}
+
+.my-farm-alert,
+.my-farm-loading {
+  margin-bottom: 16px;
+}
+
+.my-farm-loading,
+.my-farm-empty {
+  padding: 20px;
+  color: #687568;
+  font-size: 12px;
+}
+
+.my-farm-crops {
+  margin-top: 16px;
+}
+
+.my-farm-table-wrap {
+  overflow-x: auto;
+}
+
+.my-farm-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  text-align: left;
+}
+
+.my-farm-table-wrap th,
+.my-farm-table-wrap td {
+  padding: 11px 9px;
+  border-bottom: 1px solid #e9ece4;
+}
+
+.my-farm-table-wrap thead th {
+  color: #788172;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.my-farm-table-wrap tbody th {
+  color: #315b43;
+  font-weight: 700;
+}
+
+.my-farm-crop-status {
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 10px;
+  color: #486347;
+  background: #edf2e5;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.my-farm-footnote {
+  margin: 14px 0 0;
+  color: #778174;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.my-farm-footnote a {
+  color: #45694c;
+  font-weight: 700;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+  .my-farm-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .my-farm-page {
+    padding: 28px 16px 44px;
+  }
+
+  .my-farm-header {
+    flex-direction: column;
+  }
+
+  .my-farm-metrics {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .my-farm-metrics article {
+    min-height: 76px;
+  }
+
+  .my-farm-panel {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,27 @@
+.add-product-page {
+  background:
+    linear-gradient(135deg, rgb(16 47 32 / 72%), rgb(24 67 42 / 38%)),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=85")
+      center / cover fixed;
+}
+
+.add-product-page > header {
+  background: rgb(255 255 255 / 94%);
+  backdrop-filter: blur(10px);
+}
+
+.add-product-page__content {
+  min-height: calc(100vh - 74px);
+}
+
+.add-product-page__card {
+  border: 1px solid rgb(255 255 255 / 65%);
+  background: rgb(255 255 255 / 94%);
+  backdrop-filter: blur(12px);
+}
+
+@media (max-width: 640px) {
+  .add-product-page {
+    background-attachment: scroll;
+  }
+}
