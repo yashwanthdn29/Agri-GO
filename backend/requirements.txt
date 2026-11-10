@@ -6,6 +6,6 @@ pwdlib[argon2]>=0.2
 python-dotenv>=1.0
 python-jose[cryptography]>=3.3
 sqlalchemy>=2.0
-torch>=2.10,<3
 transformers>=5.0,<6
 uvicorn[standard]>=0.30
+email-validator
